@@ -112,7 +112,7 @@ Tanpa skrip ini:
 4. **Menghentikan proses sementara**  
    - Menghentikan serve sementara setelah model tersedia
 
-5. **Menjalankan Ollama sesungguhnya**  
+5. **Menjalankan server Ollama dengan model yang sudah dipilih**  
    - Berjalan di foreground dan siap melayani permintaan
 
 ---
