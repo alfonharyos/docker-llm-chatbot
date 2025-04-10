@@ -112,7 +112,7 @@ Without this script:
 4. **Stops the temporary process**  
    - Kills background serve process after pulling
 
-5. **Starts the real Ollama server**  
+5. **Starts the Ollama server with the specified model loaded**  
    - Runs in the foreground and ready to serve requests
 
 ---
