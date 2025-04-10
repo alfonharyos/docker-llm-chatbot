@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  ollama:
+    image: ollama/ollama
+    build:
+      context: ./ollama
+      dockerfile: dockerfile.ollama
+    ports:
+      - "${OLLAMA_PORT}:${OLLAMA_PORT}"
+    environment:
+      - OLLAMA_MODEL=${OLLAMA_MODEL}
+      - OLLAMA_PORT=${OLLAMA_PORT}
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+    networks:
+      - ollama-net
+
+  streamlit-ui:
+    build:
+      context: ./streamlit-ui
+      dockerfile: dockerfile.streamlit
+    ports:
+      - "${STREAMLIT_PORT}:8501"
+    depends_on:
+      - ollama
+    env_file:
+      - .env
+    networks:
+      - ollama-net
+
+volumes:
+  ollama_data:
+
+networks:
+  ollama-net:
+    driver: bridge
