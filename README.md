@@ -48,7 +48,7 @@ git clone https://github.com/alfonharyos/docker-llm-chatbot.git
 cd docker-llm-chatbot
 ```
 
-### 2. Change `.env` File
+### 2. Change Model `.env` File
 
 ```env
 OLLAMA_MODEL=gemma3:1b
